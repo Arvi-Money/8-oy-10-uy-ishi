@@ -41,7 +41,7 @@ function App() {
             <div className="message-top">
               <h2>Habar</h2>
               <div className='save-template'>
-                <img src={img} alt="" />
+                <img src={img} alt="" onClick={handleAmount}/>
                 <h2>Shablon holatida saqlash</h2>
               </div>
             </div>
@@ -62,8 +62,8 @@ function App() {
                   </div>
               ))}
               </div>
-              <textarea name="" id="" placeholder='Habar matni...'
-               value={
+              <textarea name="" id="" 
+               placeholder={
                 phoneVal
                   ? phoneVal
                   : langId === "uz"

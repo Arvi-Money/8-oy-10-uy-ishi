@@ -1,0 +1,132 @@
+.wrapper {
+  width: 96vw;
+  height: 100%;
+  margin: 1rem auto;
+  border: 1px solid rgb(226, 226, 234);
+  background: rgb(248, 248, 248);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 24px 24px 0px 24px;
+  display: flex;
+}
+
+.text-side {
+  width: 762px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-side h1 {
+  color: rgb(23, 23, 37);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0.1px;
+  margin-bottom: 24px;
+}
+
+.template {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.template h2 {
+  color: rgb(68, 68, 79);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.template select {
+  width: 100%;
+  border: 1px solid rgb(235, 234, 237);
+  border-radius: 4px;
+  height: 48px;
+  padding: 14px 20px 14px 16px;
+}
+
+.message-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.message-top h2 {
+  color: rgb(68, 68, 79);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.save-template {
+  display: flex;
+  gap: 8px;
+}
+
+.save-template h2 {
+  color: rgb(0, 98, 255);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.message-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.languages {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.languages .lang {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.languages .lang h2 {
+  color: rgb(146, 146, 157);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.languages .lang:focus{
+  border: 1px solid rgb(226, 226, 234);
+  border-radius: 4px 4px 0px 0px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.languages .lang:focus h2{
+  color: rgb(0, 98, 255);
+}
+
+.message-text textarea{
+  padding: 24px;
+  height: 50vh;
+  border: 1px solid rgb(235, 234, 237);
+  border-radius: 0px 4px 4px 4px;
+  resize: none;
+  outline: none;
+  margin-bottom: 4rem;
+  }
+
+  .phone-side{
+    position: relative;
+  }
+
+  .phone-side img{
+    position: absolute;
+    left: 5rem;
+    top: 3.8rem;
+  }

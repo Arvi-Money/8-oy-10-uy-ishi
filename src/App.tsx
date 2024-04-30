@@ -1,8 +1,24 @@
 import './App.css'
 import img from './assets/add-square.svg'
 import phone from './assets/image 13.svg'
+import { useState } from 'react'
+
+interface LangT{
+  id: string,
+  value: string
+}
 
 function App() {
+  const [langId, setLangId] = useState('uz')
+  const [langs] = useState<LangT[]>([
+    { id: "uz", value: "O'zbek" },
+    { id: "ru", value: "Русский" },
+    { id: "en", value: "English" },
+  ]);
+
+  const handleChange = (langId: string) => {
+    setLangId(langId);
+  };
 
   return (
     <>
@@ -24,15 +40,20 @@ function App() {
             </div>
             <div className="message-text">
               <div className="languages">
-                <div className="lang">
-                  <h2>O'zbekcha</h2>
-                </div>
-                <div className="lang">
-                  <h2>Русский</h2>
-                </div>
-                <div className="lang">
-                  <h2>English</h2>
-                </div>
+                {langs.map((lang) => (
+                <div
+                  key={lang.id}
+                  onClick={() => handleChange(lang.id)}
+                  className="lang"
+                  style={
+                    langId === lang.id
+                      ? { backgroundColor: "white", color: "rgb(0, 98, 255)" }
+                      : {}
+                  }
+                >
+                  {lang.value}
+                  </div>
+              ))}
               </div>
               <textarea name="" id="" placeholder='Habar matni...'></textarea>
           </div>

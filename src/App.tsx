@@ -1,4 +1,5 @@
 import './App.css'
+import { SyntheticEvent } from 'react'
 import img from './assets/add-square.svg'
 import phone from './assets/image 13.svg'
 import { useState } from 'react'
@@ -9,7 +10,8 @@ interface LangT{
 }
 
 function App() {
-  const [langId, setLangId] = useState('uz')
+  const [phoneVal, setPhoneVal] = useState("");
+  const [langId, setLangId] = useState<string>('uz')
   const [langs] = useState<LangT[]>([
     { id: "uz", value: "O'zbek" },
     { id: "ru", value: "Русский" },
@@ -18,6 +20,11 @@ function App() {
 
   const handleChange = (langId: string) => {
     setLangId(langId);
+  };
+
+  const handleAmount = (e: SyntheticEvent) => {
+    const target = e.target as HTMLTextAreaElement;
+    setPhoneVal(target.value);
   };
 
   return (
@@ -55,7 +62,16 @@ function App() {
                   </div>
               ))}
               </div>
-              <textarea name="" id="" placeholder='Habar matni...'></textarea>
+              <textarea name="" id="" placeholder='Habar matni...'
+               value={
+                phoneVal
+                  ? phoneVal
+                  : langId === "uz"
+                  ? "Habar matni..."
+                  : langId === "en"
+                  ? "Message text..."
+                  : "Текст сообщения..."
+              }></textarea>
           </div>
         </div>
         <div className="phone-side">
